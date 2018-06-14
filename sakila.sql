@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: sakila
 -- ------------------------------------------------------
--- Server version	5.7.13-log
+-- Server version	5.7.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,12 +34,8 @@ CREATE TABLE `staff` (
   `username` varchar(16) CHARACTER SET utf8 NOT NULL,
   `password` varchar(40) COLLATE utf8_bin DEFAULT NULL,
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`staff_id`),
-  KEY `idx_fk_store_id` (`store_id`),
-  KEY `idx_fk_address_id` (`address_id`),
-  CONSTRAINT `fk_staff_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_staff_store` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  PRIMARY KEY (`staff_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +44,7 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES (1,'Mike','Hillyer',3,NULL,'Mike.Hillyer@sakilastaff.com',1,1,'Mike','1234','2016-11-21 08:04:37'),(2,'Jon','Stephens',4,NULL,'Jon.Stephens@sakilastaff.com',2,1,'Jon','1234','2016-07-04 02:23:44'),(3,'TOM','DSA',3,NULL,'DF',1,1,'TOM','1234','2016-11-11 03:08:10');
+INSERT INTO `staff` VALUES (1,'sorry','Hillyer',3,NULL,'Mike.Hillyer@sakilastaff.com',1,1,'sorry','1234','2018-06-06 15:56:33'),(2,'saury','Stephens',4,NULL,'Jon.Stephens@sakilastaff.com',2,1,'saury','1234','2018-06-06 15:56:48'),(3,'admin','DSA',3,NULL,'DF',1,1,'admin','1234','2018-06-06 15:56:52'),(4,'guest','SSM',5,NULL,'admin@admin.com',1,1,'guest','1234','2018-06-06 15:59:09');
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-21 16:05:02
+-- Dump completed on 2018-06-14 16:01:08
